@@ -1,0 +1,18 @@
+
+
+creating a package:
+
+    $ros2 pkg create --build-type ament_cmake my_package --dependencies rclcpp std_msgs
+
+my_package
+    |-- CMakeLists.txt
+    |-- package.xml
+    |-- include 
+    |   `-- my_package
+    |       `-- my_header.hpp
+    `-- src
+        `-- my_source.cpp
+
+    Cmake : Projeyi build etmek icin gerekli ayarlamalarin yapildigi yerler
+    package.xml : paket icerisnde kullanilan seylerle ve paket hakkinda bilgi veren xml dosyasi
+    
