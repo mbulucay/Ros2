@@ -2,4 +2,4 @@
 /build/
 /install/
 /log/
-/ROS-TCP-Endpoint*
+/ROS-TCP-Endpoint-ROS2v0.7.0/**
