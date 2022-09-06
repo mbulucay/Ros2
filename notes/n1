@@ -17,8 +17,7 @@ my_package
     package.xml : paket icerisnde kullanilan seylerle ve paket hakkinda bilgi veren xml dosyasi
     
 
-    execuatable dosyasi >>>> dev_ws/install/pkg_name/lib/node_name | package_name / executable
-
+    execuatable dosyasi >>>> dev_ws/install/pkg_name/lib/package_name / executable
 
 
 node terminal komutlair:
@@ -56,6 +55,8 @@ node terminal komutlair:
 
             Action Clients:
 
+
+
                                             -r __node:=other_name
     ros2 run my_pkg oop_node --ros-args --remap __node:=other_name 
     > 
@@ -63,4 +64,48 @@ node terminal komutlair:
         ayni anda farkli isimde calistirabilirsin
 
 
+
+    ros2 run my_pkg oop_node --ros-args --remap __node:=other_node_name -r old_topic_name:=new_topic_name
+
+
+
+    ros2 topic echo /topic_name
+
+    ros2 topic info /topic_name
+    >
+        Type: example_interfaces/msg/String
+        Publisher count: 1
+        Subscription count: 1
+
+    ros2 topic list
+
+    ros2 topic hz /my_topic
+    >Hertz
+        >average rate: 1.000
+            min: 1.000s max: 1.000s std dev: 0.00008s window: 3
+        average rate: 1.000
+            min: 1.000s max: 1.000s std dev: 0.00008s window: 5
+
+
+    ros2 topic bw /my_topic
+    >bandwidth
+        59 B/s from 2 messages
+            Message size mean: 44 B min: 44 B max: 44 B
+        53 B/s from 3 messages
+            Message size mean: 44 B min: 44 B max: 44 B
+    
+
+    ros2 topic pub -r 10 /my_topic example_interfaces/msg/String "{data: 'hello from terminal'}"
+    >
+        terminal uzerudnei bir ropic publishlemek istedigin zaman kullanabilirsin
+    
+    mesajlar:
+    
+    ros2 interface show example_interfaces/msg/String
+    >
+        # This is an example message of using a primitive datatype, string.
+        # If you want to test with this that's fine, but if you are deploying
+        # it into a system you should create a semantically meaningful message type.
+        # If you want to embed it in another message, use the primitive data type instead.
+        string data
 
