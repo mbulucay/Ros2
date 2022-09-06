@@ -16,3 +16,51 @@ my_package
     Cmake : Projeyi build etmek icin gerekli ayarlamalarin yapildigi yerler
     package.xml : paket icerisnde kullanilan seylerle ve paket hakkinda bilgi veren xml dosyasi
     
+
+    execuatable dosyasi >>>> dev_ws/install/pkg_name/lib/node_name | package_name / executable
+
+
+
+node terminal komutlair:
+    
+    ros2 node list > ros2 uzerinde calisan nodelari listeler
+    > 
+    
+        /node
+        /oop_node
+        /.....
+        /.....
+        /.....
+        /.....
+
+
+    ros2 node info /node_name > node hakkinda sana bilgilar verir
+    > 
+    
+            /oop_node
+            Subscribers:
+                /parameter_events: rcl_interfaces/msg/ParameterEvent
+            Publishers:
+                /parameter_events: rcl_interfaces/msg/ParameterEvent
+                /rosout: rcl_interfaces/msg/Log
+            Service Servers:
+                /oop_node/describe_parameters: rcl_interfaces/srv/DescribeParameters
+                /oop_node/get_parameter_types: rcl_interfaces/srv/GetParameterTypes
+                /oop_node/get_parameters: rcl_interfaces/srv/GetParameters
+                /oop_node/list_parameters: rcl_interfaces/srv/ListParameters
+                /oop_node/set_parameters: rcl_interfaces/srv/SetParameters
+                /oop_node/set_parameters_atomically: rcl_interfaces/srv/SetParametersAtomically
+            Service Clients:
+
+            Action Servers:
+
+            Action Clients:
+
+                                            -r __node:=other_name
+    ros2 run my_pkg oop_node --ros-args --remap __node:=other_name 
+    > 
+        nodu calistirken vermeni sagliyor bu sayede birden fazla nodu 
+        ayni anda farkli isimde calistirabilirsin
+
+
+
