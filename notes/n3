@@ -1,0 +1,54 @@
+servisler cift tarafli iletiim aracidir bi rclient servera bir isterk atar ve ver server 
+bu isteege clientin eistediig cevaba gore resoonse doner bu ssayede bbuna TCP denebilir
+requsetr ve respomde sistemine dayanir
+
+tooicler tek taflidir pub ile sub arasind herhangi bir cift tarafli iletim youktur
+buna da bu yuzden UDO denebilir
+
+
+topicler tekyonlu 
+servisler cift yonlu oara kcaklisitr 
+
+
+
+bit serfix cift ynlu oldugu icin cift tarafli istek ve cevap metni bullur ve bu ------- cuiazgis ile ayrilir
+
+
+eger bir servisi terminal uzeinde icesiringe bakammk istiyorsan
+ros2 interface show example_interfaces/srv/AddTwoInts 
+
+int64 a
+int64 b
+---
+int64 sum
+
+ust kism req
+alt kisim response
+
+server callback fnoksiyonunda response degiskenini otomatik doldurman yeterli o ototmatik olrak client a cevabi dgonderecek
+ 
+ 
+$ros2 service list
+
+
+$ros2 service call /add2int example_interfaces/srv/AddTwoInts "{a: 13, b: 14}"
+
+waiting for service to become available...
+requester: making request: example_interfaces.srv.AddTwoInts_Request(a=13, b=14)
+
+response:
+example_interfaces.srv.AddTwoInts_Response(sum=27)
+
+
+int64 sum
+mbulucay@otonom-03:~/Ros2/dev_ws$ ros2 service type /add2int 
+example_interfaces/srv/AddTwoInts
+mbulucay@otonom-03:~/Ros2/dev_ws$ ros2 interface show example_interfaces/srv/AddTwoInts 
+int64 a
+int64 b
+---
+int64 sum
+
+
+run ederken service ismini degistirebilirisn
+$ros2 run my_pkg my_service --ros-args -r current_service_name:=new_service_name
