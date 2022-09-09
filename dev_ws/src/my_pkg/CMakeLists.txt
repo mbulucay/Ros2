@@ -27,7 +27,7 @@ add_executable(num_pub src/num_pub.cpp)
 ament_target_dependencies(num_pub rclcpp std_msgs)
 
 add_executable(num_sub_count_pub src/num_sub_and_count_pub.cpp)
-ament_target_dependencies(num_sub_count_pub rclcpp std_msgs)
+ament_target_dependencies(num_sub_count_pub rclcpp std_msgs example_interfaces)
 
 add_executable(sum_server src/add2int_server.cpp)
 ament_target_dependencies(sum_server rclcpp std_msgs example_interfaces)
@@ -37,6 +37,9 @@ ament_target_dependencies(sum_client rclcpp std_msgs example_interfaces)
 
 add_executable(sum_client2 src/numsclient.cpp)
 ament_target_dependencies(sum_client2 rclcpp std_msgs example_interfaces)
+
+add_executable(reset_count src/reset_count.cpp)
+ament_target_dependencies(reset_count rclcpp std_msgs example_interfaces)
 
 install(TARGETS
   node
@@ -48,6 +51,7 @@ install(TARGETS
   sum_server
   sum_client
   sum_client2
+  reset_count
   DESTINATION lib/${PROJECT_NAME}
 )
 
